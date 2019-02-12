@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F5FAE9C6CC6BC52FC47574A /* Pods_BHBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B086CB2D7E987FA9FA9690 /* Pods_BHBooks.framework */; };
 		DF83DDA82212A5F900AED664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDA72212A5F900AED664 /* AppDelegate.m */; };
-		DF83DDAB2212A5F900AED664 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDAA2212A5F900AED664 /* ViewController.m */; };
 		DF83DDAE2212A5F900AED664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF83DDAC2212A5F900AED664 /* Main.storyboard */; };
 		DF83DDB12212A5F900AED664 /* BHBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDAF2212A5F900AED664 /* BHBooks.xcdatamodeld */; };
 		DF83DDB32212A60500AED664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF83DDB22212A60500AED664 /* Assets.xcassets */; };
@@ -16,6 +16,17 @@
 		DF83DDB92212A60500AED664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDB82212A60500AED664 /* main.m */; };
 		DF83DDC32212A60500AED664 /* BHBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDC22212A60500AED664 /* BHBooksTests.m */; };
 		DF83DDCE2212A60500AED664 /* BHBooksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDCD2212A60500AED664 /* BHBooksUITests.m */; };
+		DF83DDE82212AB7C00AED664 /* BHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDE72212AB7C00AED664 /* BHBaseController.m */; };
+		DF83DDEB2212ABBF00AED664 /* BHBookShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDEA2212ABBF00AED664 /* BHBookShelfController.m */; };
+		DF83DDEE2212AC4D00AED664 /* BHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDED2212AC4D00AED664 /* BHBaseModel.m */; };
+		DF83DDF12212AC7000AED664 /* BHBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDF02212AC7000AED664 /* BHBook.m */; };
+		DF83DDF52212AD1200AED664 /* 龙皇武神.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF83DDF42212AD1200AED664 /* 龙皇武神.txt */; };
+		DF83DDF82212AD5300AED664 /* BHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDF72212AD5300AED664 /* BHBaseViewModel.m */; };
+		DF83DDFB2212AD8000AED664 /* BHBookShelfViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDFA2212AD8000AED664 /* BHBookShelfViewModel.m */; };
+		DF83DDFE2212B4AD00AED664 /* BHBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDFD2212B4AD00AED664 /* BHBookCell.m */; };
+		DF83DE022212BFCC00AED664 /* BHBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE012212BFCC00AED664 /* BHBookManager.m */; };
+		DF83DE052212C32300AED664 /* BHBookShelfLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE042212C32300AED664 /* BHBookShelfLayout.m */; };
+		DF83DE082212C36900AED664 /* BHBookShelfDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE072212C36900AED664 /* BHBookShelfDecorationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34BA86A7B38F191552AEA7E6 /* Pods-BHBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		92F6EAADE8252EC42FF8251B /* Pods-BHBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks.release.xcconfig"; sourceTree = "<group>"; };
+		95B086CB2D7E987FA9FA9690 /* Pods_BHBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF83DDA32212A5F900AED664 /* BHBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF83DDA62212A5F900AED664 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DF83DDA72212A5F900AED664 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DF83DDA92212A5F900AED664 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DF83DDAA2212A5F900AED664 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DF83DDAD2212A5F900AED664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF83DDB02212A5F900AED664 /* BHBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BHBooks.xcdatamodel; sourceTree = "<group>"; };
 		DF83DDB22212A60500AED664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +65,27 @@
 		DF83DDC92212A60500AED664 /* BHBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BHBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF83DDCD2212A60500AED664 /* BHBooksUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBooksUITests.m; sourceTree = "<group>"; };
 		DF83DDCF2212A60500AED664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF83DDE62212AB7C00AED664 /* BHBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBaseController.h; sourceTree = "<group>"; };
+		DF83DDE72212AB7C00AED664 /* BHBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBaseController.m; sourceTree = "<group>"; };
+		DF83DDE92212ABBF00AED664 /* BHBookShelfController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookShelfController.h; sourceTree = "<group>"; };
+		DF83DDEA2212ABBF00AED664 /* BHBookShelfController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfController.m; sourceTree = "<group>"; };
+		DF83DDEC2212AC4D00AED664 /* BHBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBaseModel.h; sourceTree = "<group>"; };
+		DF83DDED2212AC4D00AED664 /* BHBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBaseModel.m; sourceTree = "<group>"; };
+		DF83DDEF2212AC7000AED664 /* BHBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBook.h; sourceTree = "<group>"; };
+		DF83DDF02212AC7000AED664 /* BHBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBook.m; sourceTree = "<group>"; };
+		DF83DDF42212AD1200AED664 /* 龙皇武神.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "龙皇武神.txt"; sourceTree = "<group>"; };
+		DF83DDF62212AD5300AED664 /* BHBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBaseViewModel.h; sourceTree = "<group>"; };
+		DF83DDF72212AD5300AED664 /* BHBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBaseViewModel.m; sourceTree = "<group>"; };
+		DF83DDF92212AD8000AED664 /* BHBookShelfViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookShelfViewModel.h; sourceTree = "<group>"; };
+		DF83DDFA2212AD8000AED664 /* BHBookShelfViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfViewModel.m; sourceTree = "<group>"; };
+		DF83DDFC2212B4AD00AED664 /* BHBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookCell.h; sourceTree = "<group>"; };
+		DF83DDFD2212B4AD00AED664 /* BHBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookCell.m; sourceTree = "<group>"; };
+		DF83DE002212BFCC00AED664 /* BHBookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookManager.h; sourceTree = "<group>"; };
+		DF83DE012212BFCC00AED664 /* BHBookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookManager.m; sourceTree = "<group>"; };
+		DF83DE032212C32300AED664 /* BHBookShelfLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookShelfLayout.h; sourceTree = "<group>"; };
+		DF83DE042212C32300AED664 /* BHBookShelfLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfLayout.m; sourceTree = "<group>"; };
+		DF83DE062212C36900AED664 /* BHBookShelfDecorationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookShelfDecorationView.h; sourceTree = "<group>"; };
+		DF83DE072212C36900AED664 /* BHBookShelfDecorationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfDecorationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5FAE9C6CC6BC52FC47574A /* Pods_BHBooks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +114,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		794CDA9FA0D622943CDD3996 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34BA86A7B38F191552AEA7E6 /* Pods-BHBooks.debug.xcconfig */,
+				92F6EAADE8252EC42FF8251B /* Pods-BHBooks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B02A7DA2EB24F4F1FDF34B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95B086CB2D7E987FA9FA9690 /* Pods_BHBooks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF83DD9A2212A5F900AED664 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +138,8 @@
 				DF83DDC12212A60500AED664 /* BHBooksTests */,
 				DF83DDCC2212A60500AED664 /* BHBooksUITests */,
 				DF83DDA42212A5F900AED664 /* Products */,
+				794CDA9FA0D622943CDD3996 /* Pods */,
+				B02A7DA2EB24F4F1FDF34B20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,16 +156,12 @@
 		DF83DDA52212A5F900AED664 /* BHBooks */ = {
 			isa = PBXGroup;
 			children = (
-				DF83DDA62212A5F900AED664 /* AppDelegate.h */,
-				DF83DDA72212A5F900AED664 /* AppDelegate.m */,
-				DF83DDA92212A5F900AED664 /* ViewController.h */,
-				DF83DDAA2212A5F900AED664 /* ViewController.m */,
-				DF83DDAC2212A5F900AED664 /* Main.storyboard */,
-				DF83DDB22212A60500AED664 /* Assets.xcassets */,
-				DF83DDB42212A60500AED664 /* LaunchScreen.storyboard */,
-				DF83DDB72212A60500AED664 /* Info.plist */,
-				DF83DDB82212A60500AED664 /* main.m */,
-				DF83DDAF2212A5F900AED664 /* BHBooks.xcdatamodeld */,
+				DF83DDDC2212A97700AED664 /* AppDelegate */,
+				DF83DDDB2212A95100AED664 /* Functions */,
+				DF83DDFF2212BF9B00AED664 /* Manager */,
+				DF83DDE32212AB2B00AED664 /* Base */,
+				DF83DDDE2212A9D200AED664 /* Resource */,
+				DF83DDDD2212A98B00AED664 /* Support */,
 			);
 			path = BHBooks;
 			sourceTree = "<group>";
@@ -135,6 +184,141 @@
 			path = BHBooksUITests;
 			sourceTree = "<group>";
 		};
+		DF83DDDB2212A95100AED664 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDDF2212AAF100AED664 /* Bookshelf */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		DF83DDDC2212A97700AED664 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDA62212A5F900AED664 /* AppDelegate.h */,
+				DF83DDA72212A5F900AED664 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DF83DDDD2212A98B00AED664 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDB72212A60500AED664 /* Info.plist */,
+				DF83DDB82212A60500AED664 /* main.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		DF83DDDE2212A9D200AED664 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDF32212AD0100AED664 /* Books */,
+				DF83DDAC2212A5F900AED664 /* Main.storyboard */,
+				DF83DDB22212A60500AED664 /* Assets.xcassets */,
+				DF83DDB42212A60500AED664 /* LaunchScreen.storyboard */,
+				DF83DDAF2212A5F900AED664 /* BHBooks.xcdatamodeld */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DF83DDDF2212AAF100AED664 /* Bookshelf */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDE22212AB1A00AED664 /* model */,
+				DF83DDE12212AB1400AED664 /* view */,
+				DF83DDF22212AC7D00AED664 /* viewModel */,
+				DF83DDE02212AB0C00AED664 /* controller */,
+			);
+			path = Bookshelf;
+			sourceTree = "<group>";
+		};
+		DF83DDE02212AB0C00AED664 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDE92212ABBF00AED664 /* BHBookShelfController.h */,
+				DF83DDEA2212ABBF00AED664 /* BHBookShelfController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		DF83DDE12212AB1400AED664 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDFC2212B4AD00AED664 /* BHBookCell.h */,
+				DF83DDFD2212B4AD00AED664 /* BHBookCell.m */,
+				DF83DE032212C32300AED664 /* BHBookShelfLayout.h */,
+				DF83DE042212C32300AED664 /* BHBookShelfLayout.m */,
+				DF83DE062212C36900AED664 /* BHBookShelfDecorationView.h */,
+				DF83DE072212C36900AED664 /* BHBookShelfDecorationView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DF83DDE22212AB1A00AED664 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDEF2212AC7000AED664 /* BHBook.h */,
+				DF83DDF02212AC7000AED664 /* BHBook.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DF83DDE32212AB2B00AED664 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDE52212AB4600AED664 /* BaseModel */,
+				DF83DDE42212AB3C00AED664 /* BaseUI */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DF83DDE42212AB3C00AED664 /* BaseUI */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDE62212AB7C00AED664 /* BHBaseController.h */,
+				DF83DDE72212AB7C00AED664 /* BHBaseController.m */,
+			);
+			path = BaseUI;
+			sourceTree = "<group>";
+		};
+		DF83DDE52212AB4600AED664 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDEC2212AC4D00AED664 /* BHBaseModel.h */,
+				DF83DDED2212AC4D00AED664 /* BHBaseModel.m */,
+				DF83DDF62212AD5300AED664 /* BHBaseViewModel.h */,
+				DF83DDF72212AD5300AED664 /* BHBaseViewModel.m */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		DF83DDF22212AC7D00AED664 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDF92212AD8000AED664 /* BHBookShelfViewModel.h */,
+				DF83DDFA2212AD8000AED664 /* BHBookShelfViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		DF83DDF32212AD0100AED664 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DDF42212AD1200AED664 /* 龙皇武神.txt */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		DF83DDFF2212BF9B00AED664 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DF83DE002212BFCC00AED664 /* BHBookManager.h */,
+				DF83DE012212BFCC00AED664 /* BHBookManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +326,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF83DDD22212A60500AED664 /* Build configuration list for PBXNativeTarget "BHBooks" */;
 			buildPhases = (
+				F3AB1F7CCFDD086789B0E9D8 /* [CP] Check Pods Manifest.lock */,
 				DF83DD9F2212A5F900AED664 /* Sources */,
 				DF83DDA02212A5F900AED664 /* Frameworks */,
 				DF83DDA12212A5F900AED664 /* Resources */,
+				9B4D892D81F2B456E724603B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +426,7 @@
 			files = (
 				DF83DDB62212A60500AED664 /* LaunchScreen.storyboard in Resources */,
 				DF83DDB32212A60500AED664 /* Assets.xcassets in Resources */,
+				DF83DDF52212AD1200AED664 /* 龙皇武神.txt in Resources */,
 				DF83DDAE2212A5F900AED664 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +447,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9B4D892D81F2B456E724603B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3AB1F7CCFDD086789B0E9D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BHBooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DF83DD9F2212A5F900AED664 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF83DDF12212AC7000AED664 /* BHBook.m in Sources */,
+				DF83DDEE2212AC4D00AED664 /* BHBaseModel.m in Sources */,
+				DF83DDEB2212ABBF00AED664 /* BHBookShelfController.m in Sources */,
+				DF83DE052212C32300AED664 /* BHBookShelfLayout.m in Sources */,
+				DF83DE022212BFCC00AED664 /* BHBookManager.m in Sources */,
 				DF83DDB12212A5F900AED664 /* BHBooks.xcdatamodeld in Sources */,
-				DF83DDAB2212A5F900AED664 /* ViewController.m in Sources */,
 				DF83DDB92212A60500AED664 /* main.m in Sources */,
+				DF83DE082212C36900AED664 /* BHBookShelfDecorationView.m in Sources */,
+				DF83DDF82212AD5300AED664 /* BHBaseViewModel.m in Sources */,
+				DF83DDFB2212AD8000AED664 /* BHBookShelfViewModel.m in Sources */,
+				DF83DDE82212AB7C00AED664 /* BHBaseController.m in Sources */,
+				DF83DDFE2212B4AD00AED664 /* BHBookCell.m in Sources */,
 				DF83DDA82212A5F900AED664 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,37 +686,39 @@
 		};
 		DF83DDD32212A60500AED664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34BA86A7B38F191552AEA7E6 /* Pods-BHBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6C6R885GZ;
-				INFOPLIST_FILE = BHBooks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = BHBooks/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haowumc.BHBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DF83DDD42212A60500AED664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F6EAADE8252EC42FF8251B /* Pods-BHBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6C6R885GZ;
-				INFOPLIST_FILE = BHBooks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = BHBooks/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.haowumc.BHBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
