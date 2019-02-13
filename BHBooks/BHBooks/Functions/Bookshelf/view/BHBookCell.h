@@ -15,6 +15,7 @@ extern NSString * const kBookCellID;
 
 @interface BHBookCell : UICollectionViewCell
 
+@property (nonatomic, strong) UILabel *nameLab;
 @property (nonatomic, strong) UIImageView *bookImgView;
 @property (nonatomic, strong) BHBook *book;
 

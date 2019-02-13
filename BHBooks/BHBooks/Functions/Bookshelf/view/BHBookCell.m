@@ -29,6 +29,11 @@ NSString * const kBookCellID    = @"kBookCellID";
     [self.bookImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
     }];
+    
+    [self.contentView addSubview:self.nameLab];
+    [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.contentView);
+    }];
 }
 
 
@@ -38,6 +43,7 @@ NSString * const kBookCellID    = @"kBookCellID";
     _book = book;
     
     [self.bookImgView sd_setImageWithURL:[NSURL URLWithString:book.imageURL] placeholderImage:[UIImage imageNamed:@"1"]];
+    self.nameLab.text = book.name;
 }
 
 
@@ -48,6 +54,14 @@ NSString * const kBookCellID    = @"kBookCellID";
         _bookImgView = [UIImageView new];
     }
     return _bookImgView;
+}
+
+- (UILabel *)nameLab {
+    if (!_nameLab) {
+        _nameLab = [UILabel new];
+        
+    }
+    return _nameLab;
 }
 
 @end
