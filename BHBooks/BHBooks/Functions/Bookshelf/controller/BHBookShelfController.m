@@ -39,9 +39,13 @@
     
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i< 10; i++) {
-        BHBook *book = [[BHBook alloc] init];
-        [arr addObject:book];
+    for (int i = 0; i< 3; i++) {
+        NSMutableArray *section = [[NSMutableArray alloc] init];
+        for (int j = 0; j<3; j++) {
+            BHBook *book = [[BHBook alloc] init];
+            [section addObject:book];
+        }
+        [arr addObject:section];
     }
     
     return arr;
