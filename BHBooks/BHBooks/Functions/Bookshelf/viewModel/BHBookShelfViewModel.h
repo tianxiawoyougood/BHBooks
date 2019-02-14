@@ -11,9 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BHBookShelfController;
 @interface BHBookShelfViewModel : BHBaseViewModel<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSArray *dataSource;
+
+@property (nonatomic, weak) BHBookShelfController *bookShelfController;
 
 @end
 

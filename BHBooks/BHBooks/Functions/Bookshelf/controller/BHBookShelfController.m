@@ -10,6 +10,8 @@
 #import "BHBookShelfViewModel.h"
 #import "BHBookCell.h"
 #import "BHBookShelfLayout.h"
+#import "BHFileTool.h"
+#import "BHPageViewController.h"
 
 @interface BHBookShelfController ()
 
@@ -27,13 +29,36 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setUpUI];
-    
-    self.bookShelfViewModel.dataSource = [self testData];
+    [self loadData];
 }
 
 - (void)setUpUI {
     
     [self.view addSubview:self.collectionView];
+}
+
+- (void)loadData {
+    
+    NSMutableArray *books = [[NSMutableArray alloc] init];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSArray *fileArray = [fileManager contentsOfDirectoryAtPath:BHBooksPath error:nil];
+    
+    for (NSString *file in fileArray) {
+        
+        NSArray *arr = [file componentsSeparatedByString:@"."];
+        
+        BHBook *book = [[BHBook alloc] init];
+        book.name = arr.firstObject;
+        book.fileType = arr.lastObject;
+        book.filePath = [BHBooksPath stringByAppendingPathComponent:file];
+        
+        [books addObject:book];
+    }
+    
+    self.bookShelfViewModel.dataSource = books;
+    [self.collectionView reloadData];
 }
 
 - (NSArray *)testData {
@@ -121,6 +146,7 @@
 - (BHBookShelfViewModel *)bookShelfViewModel {
     if (!_bookShelfViewModel) {
         _bookShelfViewModel = [[BHBookShelfViewModel alloc] init];
+        _bookShelfViewModel.bookShelfController = self;
     }
     return _bookShelfViewModel;
 }

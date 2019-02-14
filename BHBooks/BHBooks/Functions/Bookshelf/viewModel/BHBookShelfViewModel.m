@@ -8,6 +8,8 @@
 
 #import "BHBookShelfViewModel.h"
 #import "BHBookCell.h"
+#import "BHPageViewController.h"
+#import "BHBookShelfController.h"
 
 @implementation BHBookShelfViewModel
 
@@ -49,6 +51,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
+    BHBook *book = [self.dataSource objectAtIndex:indexPath.row];
+    BHPageViewController *pageVC = [[BHPageViewController alloc] init];
+    pageVC.filePath = book.filePath;
+    
+    [self.bookShelfController.navigationController pushViewController:pageVC animated:YES];
 }
 
 

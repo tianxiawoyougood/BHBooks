@@ -10,4 +10,16 @@
 
 @implementation BHBookManager
 
++ (instancetype)shareInstance {
+    
+    static BHBookManager *manager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[BHBookManager alloc] init];
+    });
+    
+    return manager;
+}
+
+
 @end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BHBookShelfController.h"
+#import "BHFileTool.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,12 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    //创建目录，并将项目中的小说copy到沙盒
+    [BHFileTool createBooksRootDirectory];
+    
     BHBookShelfController *bookShelf = [[BHBookShelfController alloc] init];
-    self.window.rootViewController = bookShelf;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:bookShelf];
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     

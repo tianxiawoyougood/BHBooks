@@ -13,8 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BHBook : BHBaseModel
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *fileType;//文件后缀
 @property (nonatomic, copy) NSString *imageURL;
-@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSString *filePath;
 @property (nonatomic, copy) NSString *date;
 
 
