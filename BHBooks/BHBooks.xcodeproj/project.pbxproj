@@ -29,6 +29,8 @@
 		DF83DE022212BFCC00AED664 /* BHBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE012212BFCC00AED664 /* BHBookManager.m */; };
 		DF83DE052212C32300AED664 /* BHBookShelfLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE042212C32300AED664 /* BHBookShelfLayout.m */; };
 		DF83DE082212C36900AED664 /* BHBookShelfDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DE072212C36900AED664 /* BHBookShelfDecorationView.m */; };
+		DFFF7E332215197E0058D69A /* BHPageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFF7E322215197E0058D69A /* BHPageContentController.m */; };
+		DFFF7E35221565A90058D69A /* 龙王传说.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFFF7E34221565A90058D69A /* 龙王传说.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,9 @@
 		DF83DE042212C32300AED664 /* BHBookShelfLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfLayout.m; sourceTree = "<group>"; };
 		DF83DE062212C36900AED664 /* BHBookShelfDecorationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookShelfDecorationView.h; sourceTree = "<group>"; };
 		DF83DE072212C36900AED664 /* BHBookShelfDecorationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookShelfDecorationView.m; sourceTree = "<group>"; };
+		DFFF7E312215197E0058D69A /* BHPageContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPageContentController.h; sourceTree = "<group>"; };
+		DFFF7E322215197E0058D69A /* BHPageContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPageContentController.m; sourceTree = "<group>"; };
+		DFFF7E34221565A90058D69A /* 龙王传说.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "龙王传说.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +158,8 @@
 			children = (
 				DF248D08221505A80066B382 /* BHPageViewController.h */,
 				DF248D09221505A80066B382 /* BHPageViewController.m */,
+				DFFF7E312215197E0058D69A /* BHPageContentController.h */,
+				DFFF7E322215197E0058D69A /* BHPageContentController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -363,6 +370,7 @@
 		DF83DDF32212AD0100AED664 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				DFFF7E34221565A90058D69A /* 龙王传说.txt */,
 				DF83DDF42212AD1200AED664 /* 龙皇武神.txt */,
 			);
 			path = Books;
@@ -484,6 +492,7 @@
 			files = (
 				DF83DDB62212A60500AED664 /* LaunchScreen.storyboard in Resources */,
 				DF83DDB32212A60500AED664 /* Assets.xcassets in Resources */,
+				DFFF7E35221565A90058D69A /* 龙王传说.txt in Resources */,
 				DF83DDF52212AD1200AED664 /* 龙皇武神.txt in Resources */,
 				DF83DDAE2212A5F900AED664 /* Main.storyboard in Resources */,
 			);
@@ -573,6 +582,7 @@
 				DF83DDB92212A60500AED664 /* main.m in Sources */,
 				DF83DE082212C36900AED664 /* BHBookShelfDecorationView.m in Sources */,
 				DF83DDF82212AD5300AED664 /* BHBaseViewModel.m in Sources */,
+				DFFF7E332215197E0058D69A /* BHPageContentController.m in Sources */,
 				DF83DDFB2212AD8000AED664 /* BHBookShelfViewModel.m in Sources */,
 				DF83DDE82212AB7C00AED664 /* BHBaseController.m in Sources */,
 				DF83DDFE2212B4AD00AED664 /* BHBookCell.m in Sources */,
