@@ -40,11 +40,11 @@
     CGFloat cellHeight = self.itemSize.height;
     CGFloat cellSpace = self.minimumLineSpacing;
 
-    
+          
     CGFloat height = cellHeight + cellSpace;
     
-    attributes.frame = CGRectMake(0, top - 8, [UIScreen mainScreen].bounds.size.width, height);
-    attributes.zIndex = -1;
+    attributes.frame = CGRectMake(0, top, [UIScreen mainScreen].bounds.size.width, height);
+    attributes.zIndex = -1;//层级。cell默认是0
     
     return attributes;
 }

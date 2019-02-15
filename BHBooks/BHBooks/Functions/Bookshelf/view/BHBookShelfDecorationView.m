@@ -22,7 +22,8 @@
     if (self) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake( 0, 0, frame.size.width, frame.size.height)];
         UIImage *image = [UIImage imageNamed:@"BookShelfCell"];
-        _imageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
+        image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
+        _imageView.image = image;
         [self addSubview:_imageView];
         
     }

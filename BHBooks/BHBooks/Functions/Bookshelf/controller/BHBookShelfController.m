@@ -9,14 +9,17 @@
 #import "BHBookShelfController.h"
 #import "BHBookShelfViewModel.h"
 #import "BHBookCell.h"
+#import "BHPlaceholderBookCell.h"
+#import "BHBookShelfHeaderView.h"
 #import "BHBookShelfLayout.h"
 #import "BHFileTool.h"
 #import "BHPageViewController.h"
+#import "BHUIManager.h"
+#import <Masonry/Masonry.h>
 
 @interface BHBookShelfController ()
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-
 
 @property (nonatomic, strong) BHBookShelfViewModel *bookShelfViewModel;
 
@@ -26,7 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:73/255.0f green:32/255.0f blue:1/255.0f alpha:1];
+    self.navigationController.navigationBar.hidden = YES;
+    
+    //95 57 17
     
     [self setUpUI];
     [self loadData];
@@ -35,6 +41,11 @@
 - (void)setUpUI {
     
     [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.top.equalTo(self.view).offset([BHUIManager statusBarOffset]);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-[BHUIManager iphoneXTabrOffset]);
+    }];
 }
 
 - (void)loadData {
@@ -55,6 +66,15 @@
         book.filePath = [BHBooksPath stringByAppendingPathComponent:file];
         
         [books addObject:book];
+    }
+    
+    NSInteger bookCount = [books count];
+    NSInteger minCount = 21;
+    if (bookCount < minCount) {
+        for (int i = 0; i < minCount - bookCount; i++) {
+            BHPlaceholderBook *placeholderBook = [[BHPlaceholderBook alloc] init];
+            [books addObject:placeholderBook];
+        }
     }
     
     self.bookShelfViewModel.dataSource = books;
@@ -102,8 +122,19 @@
             
         case UIGestureRecognizerStateEnded:
         {
-            //停止移动
-            [_collectionView endInteractiveMovement];
+            if (indexPath == nil) {
+                //取消移动
+                [_collectionView cancelInteractiveMovement];
+            }
+            
+            id book = [self.bookShelfViewModel.dataSource objectAtIndex:indexPath.row];
+            if ([book isKindOfClass:[BHBook class]]) {
+                //停止移动
+                [_collectionView endInteractiveMovement];
+            }else{
+                [_collectionView cancelInteractiveMovement];
+            }
+            
         }
             break;
             
@@ -121,11 +152,11 @@
     if (!_collectionView) {
         
         BHBookShelfLayout *layout = [[BHBookShelfLayout alloc] init];
-        layout.itemSize = CGSizeMake(80, 80);
+        layout.itemSize = CGSizeMake(80, 98);
         layout.headerReferenceSize = CGSizeMake(self.view.bounds.size.width, 0);
         layout.footerReferenceSize = CGSizeMake(self.view.bounds.size.width, 0);
-        layout.sectionInset = UIEdgeInsetsMake(10, 30, 0, 30);
-        layout.minimumLineSpacing = 20;
+        layout.sectionInset = UIEdgeInsetsMake(0, 30, 0, 30);
+        layout.minimumLineSpacing = 17;
         layout.minimumInteritemSpacing = ([UIScreen mainScreen].bounds.size.width - 80 * 3 - 60) / 2;
         
         
@@ -135,6 +166,8 @@
         _collectionView.dataSource = self.bookShelfViewModel;
         
         [_collectionView registerClass:[BHBookCell class] forCellWithReuseIdentifier:kBookCellID];
+        [_collectionView registerClass:[BHPlaceholderBookCell class] forCellWithReuseIdentifier:kBHPlaceholderBookCellId];
+        [_collectionView registerClass:[BHBookshelfHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kBHBookshelfHeaderViewId];
         
         UILongPressGestureRecognizer *loogPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(loogPressAction:)];
         [_collectionView addGestureRecognizer:loogPressGesture];

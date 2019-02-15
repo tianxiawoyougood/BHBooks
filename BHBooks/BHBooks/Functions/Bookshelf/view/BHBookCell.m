@@ -27,12 +27,15 @@ NSString * const kBookCellID    = @"kBookCellID";
     
     [self.contentView addSubview:self.bookImgView];
     [self.bookImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).offset(18);
+        make.left.right.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView.mas_bottom);
     }];
     
     [self.contentView addSubview:self.nameLab];
     [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).offset(60);
+        make.centerX.equalTo(self.contentView).offset(8);
     }];
 }
 
@@ -59,7 +62,8 @@ NSString * const kBookCellID    = @"kBookCellID";
 - (UILabel *)nameLab {
     if (!_nameLab) {
         _nameLab = [UILabel new];
-        
+        _nameLab.textColor = [UIColor whiteColor];
+        _nameLab.font = [UIFont systemFontOfSize:8];
     }
     return _nameLab;
 }

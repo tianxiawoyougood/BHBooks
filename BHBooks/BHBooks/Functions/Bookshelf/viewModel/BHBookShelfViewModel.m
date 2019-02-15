@@ -8,8 +8,10 @@
 
 #import "BHBookShelfViewModel.h"
 #import "BHBookCell.h"
+#import "BHPlaceholderBookCell.h"
 #import "BHPageViewController.h"
 #import "BHBookShelfController.h"
+#import "BHBookshelfHeaderView.h"
 
 @implementation BHBookShelfViewModel
 
@@ -25,9 +27,31 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BHBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBookCellID forIndexPath:indexPath];
-    cell.book = [self.dataSource objectAtIndex:indexPath.row];
-    return cell;
+    
+    id book = [self.dataSource objectAtIndex:indexPath.row];
+    if ([book isKindOfClass:[BHBook class]]) {
+        
+        BHBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBookCellID forIndexPath:indexPath];
+        cell.book = book;
+        return cell;
+        
+    }else{
+        BHPlaceholderBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBHPlaceholderBookCellId forIndexPath:indexPath];
+        return cell;
+    }
+    
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        BHBookshelfHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kBHBookshelfHeaderViewId forIndexPath:indexPath];
+        return headerView;
+    }
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(collectionView.bounds.size.width, 18);
 }
 
 // 是否可以移动
@@ -38,11 +62,16 @@
 // 移动完成 更新数据
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(nonnull NSIndexPath *)sourceIndexPath toIndexPath:(nonnull NSIndexPath *)destinationIndexPath {
     
-    NSMutableArray *tempArr = [NSMutableArray arrayWithArray:self.dataSource];
-    [tempArr exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
+    id book = [self.dataSource objectAtIndex:destinationIndexPath.row];
+    if ([book isKindOfClass:[BHBook class]]) {
+        
+        NSMutableArray *tempArr = [NSMutableArray arrayWithArray:self.dataSource];
+        [tempArr exchangeObjectAtIndex:sourceIndexPath.row withObjectAtIndex:destinationIndexPath.row];
+        
+        self.dataSource = tempArr;
+        [collectionView reloadData];
+    }
     
-    self.dataSource = tempArr;
-    [collectionView reloadData];
 }
 
 
