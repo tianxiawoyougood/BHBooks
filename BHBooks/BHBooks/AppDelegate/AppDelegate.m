@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "BHBookShelfController.h"
 #import "BHFileTool.h"
+#import "BHBaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +26,7 @@
     [BHFileTool createBooksRootDirectory];
     
     BHBookShelfController *bookShelf = [[BHBookShelfController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:bookShelf];
+    BHBaseNavigationController *nav = [[BHBaseNavigationController alloc] initWithRootViewController:bookShelf];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];

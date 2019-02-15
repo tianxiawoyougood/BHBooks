@@ -9,6 +9,7 @@
 #import "BHPageViewController.h"
 #import "BHPageContentController.h"
 #import "BHFileTool.h"
+#import "BHUIManager.h"
 
 @interface BHPageViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 {
@@ -33,6 +34,11 @@
 
 @implementation BHPageViewController
 
+//控制状态栏是否显示
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -48,6 +54,12 @@
     self.pageViewController.view.frame = self.view.bounds;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 }
 
 - (void)initialization {
@@ -57,7 +69,7 @@
     _currentIndex = 0;
     _currentChapter = 0;
     
-    _contentSize = self.view.bounds.size;
+    _contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - [BHUIManager statusBarOffset] - [BHUIManager tabbarHieght]);
 }
 
 - (void)loadData {
@@ -117,7 +129,7 @@
     
     BHPageContentController *contentVC = [[BHPageContentController alloc] init];
     contentVC.content = [self.pageContentArray objectAtIndex:index];
-    
+    [contentVC setIndex:index totalPages:self.pageContentArray.count];
     self.currentVC = contentVC;
     
     return contentVC;

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSMutableAttributedString *content;//内容
 @property (nonatomic, copy) NSString *text;
 
-
+- (void)setIndex:(NSInteger)index totalPages:(NSInteger)totalPages;
 
 @end
 

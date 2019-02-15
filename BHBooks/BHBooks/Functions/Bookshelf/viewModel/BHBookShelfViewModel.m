@@ -71,7 +71,6 @@
         self.dataSource = tempArr;
         [collectionView reloadData];
     }
-    
 }
 
 
@@ -80,11 +79,17 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    BHBook *book = [self.dataSource objectAtIndex:indexPath.row];
-    BHPageViewController *pageVC = [[BHPageViewController alloc] init];
-    pageVC.filePath = book.filePath;
+    id model = [self.dataSource objectAtIndex:indexPath.row];
     
-    [self.bookShelfController.navigationController pushViewController:pageVC animated:YES];
+    if ([model isKindOfClass:[BHBook class]]) {
+        
+        BHBook *book = (BHBook *)model;
+        BHPageViewController *pageVC = [[BHPageViewController alloc] init];
+        pageVC.filePath = book.filePath;
+        
+        [self.bookShelfController.navigationController pushViewController:pageVC animated:YES];
+    }
+    
 }
 
 
