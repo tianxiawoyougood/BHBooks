@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F5FAE9C6CC6BC52FC47574A /* Pods_BHBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B086CB2D7E987FA9FA9690 /* Pods_BHBooks.framework */; };
+		DF08931E2230F0C60002B7B6 /* BHPageTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF08931D2230F0C60002B7B6 /* BHPageTopView.m */; };
+		DF0893212230F0E60002B7B6 /* BHPageBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0893202230F0E60002B7B6 /* BHPageBottomView.m */; };
 		DF22F3D222165BC100D47719 /* BHPlaceholderBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22F3D122165BC100D47719 /* BHPlaceholderBook.m */; };
 		DF22F3D522165BF800D47719 /* BHPlaceholderBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22F3D422165BF800D47719 /* BHPlaceholderBookCell.m */; };
 		DF22F3D8221694D300D47719 /* BHBookshelfHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF22F3D7221694D300D47719 /* BHBookshelfHeaderView.m */; };
@@ -16,6 +18,7 @@
 		DF4F93C222169B1300FB35EB /* BHUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4F93C122169B1300FB35EB /* BHUIManager.m */; };
 		DF4F93C52216B09200FB35EB /* BHBatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4F93C42216B09200FB35EB /* BHBatteryView.m */; };
 		DF4F93C82216D21100FB35EB /* BHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4F93C72216D21100FB35EB /* BHBaseNavigationController.m */; };
+		DF767DC4223209B400C03911 /* BHBookListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF767DC3223209B400C03911 /* BHBookListView.m */; };
 		DF83DDA82212A5F900AED664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDA72212A5F900AED664 /* AppDelegate.m */; };
 		DF83DDAE2212A5F900AED664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF83DDAC2212A5F900AED664 /* Main.storyboard */; };
 		DF83DDB12212A5F900AED664 /* BHBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF83DDAF2212A5F900AED664 /* BHBooks.xcdatamodeld */; };
@@ -60,6 +63,10 @@
 		34BA86A7B38F191552AEA7E6 /* Pods-BHBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		92F6EAADE8252EC42FF8251B /* Pods-BHBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHBooks/Pods-BHBooks.release.xcconfig"; sourceTree = "<group>"; };
 		95B086CB2D7E987FA9FA9690 /* Pods_BHBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF08931C2230F0C60002B7B6 /* BHPageTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPageTopView.h; sourceTree = "<group>"; };
+		DF08931D2230F0C60002B7B6 /* BHPageTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPageTopView.m; sourceTree = "<group>"; };
+		DF08931F2230F0E60002B7B6 /* BHPageBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPageBottomView.h; sourceTree = "<group>"; };
+		DF0893202230F0E60002B7B6 /* BHPageBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPageBottomView.m; sourceTree = "<group>"; };
 		DF22F3D022165BC100D47719 /* BHPlaceholderBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPlaceholderBook.h; sourceTree = "<group>"; };
 		DF22F3D122165BC100D47719 /* BHPlaceholderBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPlaceholderBook.m; sourceTree = "<group>"; };
 		DF22F3D322165BF800D47719 /* BHPlaceholderBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPlaceholderBookCell.h; sourceTree = "<group>"; };
@@ -76,6 +83,8 @@
 		DF4F93C42216B09200FB35EB /* BHBatteryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBatteryView.m; sourceTree = "<group>"; };
 		DF4F93C62216D21100FB35EB /* BHBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBaseNavigationController.h; sourceTree = "<group>"; };
 		DF4F93C72216D21100FB35EB /* BHBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBaseNavigationController.m; sourceTree = "<group>"; };
+		DF767DC2223209B400C03911 /* BHBookListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBookListView.h; sourceTree = "<group>"; };
+		DF767DC3223209B400C03911 /* BHBookListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBookListView.m; sourceTree = "<group>"; };
 		DF83DDA32212A5F900AED664 /* BHBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF83DDA62212A5F900AED664 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DF83DDA72212A5F900AED664 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +210,12 @@
 			children = (
 				DF4F93C32216B09200FB35EB /* BHBatteryView.h */,
 				DF4F93C42216B09200FB35EB /* BHBatteryView.m */,
+				DF08931C2230F0C60002B7B6 /* BHPageTopView.h */,
+				DF08931D2230F0C60002B7B6 /* BHPageTopView.m */,
+				DF08931F2230F0E60002B7B6 /* BHPageBottomView.h */,
+				DF0893202230F0E60002B7B6 /* BHPageBottomView.m */,
+				DF767DC2223209B400C03911 /* BHBookListView.h */,
+				DF767DC3223209B400C03911 /* BHBookListView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -614,9 +629,12 @@
 				DF83DDB92212A60500AED664 /* main.m in Sources */,
 				DF83DE082212C36900AED664 /* BHBookShelfDecorationView.m in Sources */,
 				DF83DDF82212AD5300AED664 /* BHBaseViewModel.m in Sources */,
+				DF0893212230F0E60002B7B6 /* BHPageBottomView.m in Sources */,
 				DFFF7E332215197E0058D69A /* BHPageContentController.m in Sources */,
 				DF83DDFB2212AD8000AED664 /* BHBookShelfViewModel.m in Sources */,
+				DF08931E2230F0C60002B7B6 /* BHPageTopView.m in Sources */,
 				DF83DDE82212AB7C00AED664 /* BHBaseController.m in Sources */,
+				DF767DC4223209B400C03911 /* BHBookListView.m in Sources */,
 				DF83DDFE2212B4AD00AED664 /* BHBookCell.m in Sources */,
 				DF4F93C52216B09200FB35EB /* BHBatteryView.m in Sources */,
 				DF22F3D8221694D300D47719 /* BHBookshelfHeaderView.m in Sources */,

@@ -10,6 +10,10 @@
 #import "BHPageContentController.h"
 #import "BHFileTool.h"
 #import "BHUIManager.h"
+#import "BHPageTopView.h"
+#import "BHPageBottomView.h"
+#import <Masonry/Masonry.h>
+#import "BHBookListView.h"
 
 @interface BHPageViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 {
@@ -29,6 +33,12 @@
 
 @property (nonatomic, strong) BHPageContentController *currentVC;//当前内容控制器
 
+@property (nonatomic, strong) BHPageTopView *topView;//头部视图
+@property (nonatomic, strong) BHPageBottomView *bottomView;//底部视图
+@property (nonatomic, strong) BHBookListView *listView;//目录视图
+
+@property (nonatomic, assign) BOOL showToolView;
+
 
 @end
 
@@ -36,7 +46,32 @@
 
 //控制状态栏是否显示
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    if (self.showToolView) {
+        return NO;
+    }else{
+        return YES;;
+    }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - the cycle life
+
+- (void)dealloc
+{
+    NSLog(@"%s", __func__);
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _showToolView = NO;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -54,13 +89,81 @@
     self.pageViewController.view.frame = self.view.bounds;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
+    
+    [self.view addSubview:self.topView];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(-[BHUIManager navigationBarHeight]);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view.mas_right);
+        make.height.mas_equalTo([BHUIManager navigationBarHeight]);
+    }];
+    
+    [self.view addSubview:self.bottomView];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        CGFloat height = 60*kDesignScaleXForIP6 + [BHUIManager iphoneXTabrOffset];
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(height);
+        make.height.mas_equalTo(height);
+    }];
+    
+    [self.view addSubview:self.listView];
+    [self.listView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_left);
+        make.top.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.width.mas_equalTo(kScreenWidth);
+    }];
 
+    [self initializBlock];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:tap];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 
+#pragma mark - event
+
+- (void)tap:(UITapGestureRecognizer *)tap {
+    
+    CGPoint point = [tap locationInView:self.view];
+    if (point.x < 0.3*kScreenWidth || point.x > 0.7*kScreenWidth || point.y < 0.3*kScreenHeight || point.y > 0.7*kScreenHeight) {
+        return;
+    }
+    NSTimeInterval duration = 0.3;
+    if (self.showToolView) {
+        self.showToolView = NO;
+        
+        [self.view setNeedsUpdateConstraints];
+        [UIView animateWithDuration:duration animations:^{
+            [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.view).offset(-[BHUIManager navigationBarHeight]);
+            }];
+            [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(self.view.mas_bottom).offset(60*kDesignScaleXForIP6 + [BHUIManager iphoneXTabrOffset]);
+            }];
+            [self.view layoutIfNeeded];
+        }];
+        
+    }else{
+        self.showToolView = YES;
+        
+        [self.view setNeedsUpdateConstraints];
+        [UIView animateWithDuration:duration animations:^{
+            [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.view.mas_top);
+            }];
+            [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(self.view.mas_bottom);
+            }];
+            [self.view layoutIfNeeded];
+        }];
+        
+    }
+    //更新状态栏是不是显示
+    [self setNeedsStatusBarAppearanceUpdate];
 }
+
+#pragma mark --
 
 - (void)initialization {
     
@@ -70,6 +173,30 @@
     _currentChapter = 0;
     
     _contentSize = CGSizeMake(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - [BHUIManager statusBarOffset] - [BHUIManager tabbarHieght]);
+}
+
+- (void)initializBlock {
+    
+    __weak typeof(self) weakSelf = self;
+    self.topView.backBlock = ^(UIButton * _Nonnull btn) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+    
+    self.bottomView.listBlock = ^(UIButton * _Nonnull sender) {
+        weakSelf.listView.hidden = NO;
+        [UIView animateWithDuration:0.3 animations:^{
+            weakSelf.listView.transform = CGAffineTransformMakeTranslation(kScreenWidth*0.8, 0);
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    };
+    self.bottomView.readModelBlock = ^(UIButton * _Nonnull sender) {
+        
+    };
+    self.bottomView.setupFontBlock = ^(BHSetupFontType type) {
+        
+    };
 }
 
 - (void)loadData {
@@ -95,8 +222,7 @@
 
 - (NSArray *)pagingWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize textAttribute:(NSDictionary *)textAttribute {
     
-#warning 这里需要好好学习一下
-    
+    // 将字符串分页
     NSMutableArray *pageArray = [NSMutableArray array];
     NSMutableAttributedString *orginAttributeString = [[NSMutableAttributedString alloc] initWithString:contentString attributes:textAttribute];
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:orginAttributeString];
@@ -105,8 +231,12 @@
     int i = 0;
     while (YES) {
         i++;
+        
+        // 文本容器
         NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:contentSize];
         [layoutManager addTextContainer:textContainer];
+        
+        // 当前容器显示的内荣在字符串中的位置
         NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
         
         if (range.length <= 0) {
@@ -184,5 +314,27 @@
     }
     return _pageViewController;
 }
+
+- (BHPageTopView *)topView {
+    if (!_topView) {
+        _topView = [[BHPageTopView alloc] init];
+    }
+    return _topView;
+}
+
+- (BHPageBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[BHPageBottomView alloc] init];
+    }
+    return _bottomView;
+}
+
+- (BHBookListView *)listView {
+    if (!_listView) {
+        _listView = [[BHBookListView alloc] init];
+    }
+    return _listView;
+}
+
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
+#import <Masonry/Masonry.h>
 
 
 #define kScreenWidth                       (CGRectGetWidth([[UIScreen mainScreen] bounds]))
